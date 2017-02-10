@@ -1,0 +1,149 @@
+# set path before execution
+cd C:\smd\c\CS554\CS554\Debug
+set path=%path%;C:\smd\classes\CS554\HW1\project1\Opengl\lib
+
+# Execute the code:
+############################  Project 2 ######################################
+
+Problem 3
+---------
+
+# Smoothing bunny with initial weighs
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -color_vert 2 -l 0.05
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 0
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 1
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 2
+# 3D checkerboard on smoothed bunny with initial weighs
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 3 -color_vert 2 -l 0.05
+
+# Smoothing bunny with recomputed weighs
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 0 -iterscheme 1
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 1 -iterscheme 1
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 2 -iterscheme 1
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 3 -iterscheme 1
+# 3D checkerboard on smoothed bunny with recomputed weighs
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 20 -wtscheme 3 -iterscheme 1 -color_vert 2 -l 0.05
+
+# Heat Diffusion
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -heatdiff
+# Heat Diffusion - show only the saddle points
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -heatdiff -saddle
+
+Sample Bunny Points:
+Triangle: 6786, Vertex: 3543 <- midpoint (0.0)
+Triangle: 658,  Vertex: 1022 <- axis 1 (1.0)
+Triangle: 7487, Vertex: 2358 <- axis 1 (1.0)
+Triangle: 4476, Vertex: 4102 <- axis 2 (1.0)
+Triangle: 2399, Vertex: 2016 <- axis 2 (1.0)
+
+# Texture
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -texture
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -texture -texturefile C:/smd/classes/CS554/HW3/sample_textures\338.jpg
+
+#####  Misc commands for debug
+# Smooth Uniform
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply" -smooth -nsmooth 1 -wtscheme 3
+
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/tetrahedron.ply" -smooth -nsmooth 1 -wtscheme 0
+
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -smooth -nsmooth 1 -wtscheme 3 > c:\smd\temp\cs554.txt
+
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -smooth -nsmooth 5 -wtscheme 3 -iterscheme 1
+
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -smooth -nsmooth 5 -wtscheme 3 -iterscheme 1 -heatdiff
+
+# Smooth Cord
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply" -smooth -wtscheme 1
+
+############################  Project 2 ######################################
+
+Problem 1
+---------
+# Face-normal
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply" -silhouette 2
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -silhouette 1
+# Vertex-normal Levelset
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -silhouette 2
+
+Problem 2
+---------
+# Regular sub-division
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -color_poly 2 -subdivide 1 -t 0.02 -euler
+
+Problem 3
+---------
+# Irregular sub-division
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply" -color_poly 2 -subdivide 2 -t 0.1 -r 3 -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/tetrahedron.ply" -color_poly 2 -subdivide 2 -t 0.1 -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -color_poly 2 -subdivide 2 -t 0.02 -euler
+
+Problem 4
+---------
+# 3D Checkerboard sub-division (Regular subdivide)
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -subdivide 1 -t 0.02 -color_vert 2
+# 3D Checkerboard sub-division (Irregular subdivide)
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -subdivide 2 -t 0.02 -color_vert 2
+
+
+
+############################  Project 1 ######################################
+# Problem 1
+# Euler Characteristics:
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/happy.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dodecahedron.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/hexahedron.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/octahedron.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/sphere.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/tetrahedron.ply" -euler
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/torus.ply" -euler
+
+# Problem 2
+# a. - Polygon color unique
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -color_poly 2 -color_vert 0
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/happy.ply" -color_poly 2 -color_vert 0
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -color_poly 2 -color_vert 0
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -color_poly 2 -color_vert 0
+
+# b. - Polygon color based on normal
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -color_poly 1 -color_vert 0
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/happy.ply" -color_poly 1 -color_vert 0
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -color_poly 1 -color_vert 0
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -color_poly 1 -color_vert 0
+
+# c. - Vertex color based on vertex point
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -color_poly 1 -l 0.5 -color_vert 2
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/happy.ply" -color_poly 1 -l 0.5 -color_vert 2
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -color_poly 1 -l 0.5 -color_vert 2
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -color_poly 1 -l 0.5 -color_vert 2
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply" -color_poly 1 -l 0.5 -color_vert 2
+
+# Bounding Box Orientation with vertex points
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/happy.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dodecahedron.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/hexahedron.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/octahedron.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/sphere.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/tetrahedron.ply" -color_poly 1 -color_vert 2 -bbox
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/torus.ply" -color_poly 1 -color_vert 2 -bbox
+
+# Bounding Box Orientation with norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/happy.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/feline.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dragon.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/dodecahedron.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/hexahedron.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/octahedron.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/sphere.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/tetrahedron.ply" -color_poly 1 -color_vert 2 -bbox -norm
+CS554 -file "C:/smd/classes/CS554/HW1/project1/tempmodels/torus.ply" -color_poly 1 -color_vert 2 -bbox -norm
+
