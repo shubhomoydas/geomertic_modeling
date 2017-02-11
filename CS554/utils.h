@@ -48,7 +48,7 @@ typedef struct _CommandOptions {
 		norm(false), axes(false), bbox(false), euler(false), debug (false), subdivide(false), \
 		silhouette(0), r(1), smooth(false), wtscheme(0), iterscheme(0), lambda(0.1), nsmooth(10), \
 		heatdiff(false), saddle(false), texture(false), \
-		texturefile(std::string("C:\\smd\\classes\\CS554\\HW3\\sample_textures\\checkerboard.jpg")), \
+		texturefile(std::string("sample_textures\\checkerboard.jpg")), \
 		curv(false), curvtype(0), curvtensor(false), curvaxis(0), curvnsmooth(0), curvstream(false), \
 		segment(false), segmentdepth(1), segmentmaxfaces(40), \
 		segmentloadfile(std::string()), segmentsavefile(std::string()), segmenttexture(false), segmentmaxlen(0.5), \

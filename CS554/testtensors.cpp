@@ -37,8 +37,8 @@ void test_tensors(int argc, char **argv) {
 
 	progname = options->argv[0];
 
-	options->file = "C:/smd/classes/CS554/HW1/project1/tempmodels/bunny.ply";
-	//options->file = "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply";
+	options->file = "ply/bunny.ply";
+	//options->file = "ply/icosahedron.ply";
 	this_file = fopen((options->file).c_str(), "r");
 	poly = new Polyhedron (this_file);
 	fclose(this_file);

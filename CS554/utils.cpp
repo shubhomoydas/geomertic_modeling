@@ -2,8 +2,8 @@
 
 CommandOptions *parse_command_line_options(int argc, char **argv) {
 	CommandOptions *options = new CommandOptions();
-	options->file = "C:/smd/classes/CS554/HW1/project1/tempmodels/tetrahedron.ply";
-	//options->file = "C:/smd/classes/CS554/HW1/project1/tempmodels/icosahedron.ply";
+	options->file = "ply/tetrahedron.ply";
+	//options->file = "ply/icosahedron.ply";
 	options->argc = argc;
 	options->argv = argv;
 	bool returnOptions = true;

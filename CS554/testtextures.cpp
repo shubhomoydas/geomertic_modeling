@@ -36,7 +36,7 @@ void tex_init(void)
 
    //glGenTextures(1, &texName);
 
-   texName = loadTextureJPG("C:\\smd\\classes\\CS554\\HW3\\sample_textures\\checkerboard.jpg", 0);
+   texName = loadTextureJPG("sample_textures\\checkerboard.jpg", 0);
    glBindTexture(GL_TEXTURE_2D, texName);
 
 

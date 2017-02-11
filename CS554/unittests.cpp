@@ -26,7 +26,7 @@ void test_rndperm() {
 void test_image_load() {
 	int x, y, channels, force_channel=0;
 	unsigned char *img = stbi_load( \
-		"C:\\smd\\classes\\CS554\\HW3\\sample_textures\\3.jpg", \
+		"sample_textures\\3.jpg", \
 		&x, &y, &channels, force_channel);
 	printf ("x: %d, y: %d, channels: %d\n", x, y, channels);
 	stbi_image_free(img);
